@@ -50,8 +50,8 @@ async def match(ctx):
     }
 
     # create channel
-    name = f"{player1.nick} vs {player2.nick}"
-    topic = f"AVGL Summer League: {player1.nick} vs {player2.nick}"
+    name = f"{player1.display_name} vs {player2.display_name}"
+    topic = f"AVGL Summer League: {player1.display_name} vs {player2.display_name}"
     reason = "Staff invoked tourney match channel"
     match_channel = await \
         ctx.guild.create_text_channel(name=name,
@@ -62,7 +62,7 @@ async def match(ctx):
 
     text = f" \n\n{copypasta}"
     embed = discord.Embed(color=discord.Colour.dark_green())
-    embed.add_field(name=f"{player1.nick} vs {player2.nick}",
+    embed.add_field(name=f"{player1.display_name} vs {player2.display_name}",
                     value=copypasta,
                     inline=False)
     embed.add_field(name="Rocket League Default Time",
