@@ -65,12 +65,9 @@ async def match(ctx):
     embed.add_field(name=f"{player1.display_name} vs {player2.display_name}",
                     value=copypasta,
                     inline=False)
-    embed.add_field(name="Rocket League Default Time",
-                    value=f"<t:{get_unix_time(2)}:F>"
-                          f"\n(<t:{get_unix_time(2)}:R>)")
-    embed.add_field(name="VALORANT Default Time",
-                    value=f"<t:{get_unix_time(3)}:F>"
-                          f"\n(<t:{get_unix_time(3)}:R>)")
+    embed.add_field(name="Default Match Time",
+                    value=f"<t:{get_unix_time(6)}:F>"
+                          f"\n(<t:{get_unix_time(6)}:R>)")
     embed.timestamp = datetime.datetime.now()
     embed.set_footer(icon_url=footer_icon,
                      text="GLHF!")
@@ -93,7 +90,7 @@ def get_unix_time(date_index):
     while date.weekday() != date_index:
         date += datetime.timedelta(1)
 
-    new_date = date.replace(hour=23, minute=0, second=0, tzinfo=timezone.utc)
+    new_date = date.replace(hour=19, minute=0, second=0, tzinfo=timezone.utc)
     return round(new_date.timestamp())
 
 
